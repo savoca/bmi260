@@ -11,6 +11,13 @@
   - `modprobe fakedevice.ko`
 - Devices enumerated by BIOS/ACPI are not currently supported, but this can be added with minimal changes.
 
+## Usage
+- Right now you can change modes by writing them, e.g.
+  - `echo 1 > /sys/bus/i2c/devices/3-0018/mode` will enter normal mode with BMI260 on i2c bus 3, address 0x18
+- Without IIO, a simple processed or raw data value could look like:
+  - `cat /sys/bus/i2c/devices/3-0018/accel_processed` or `cat /sys/bus/i2c/devices/3-0018/gyro_raw`
+
+
 ## TODO
 
 - Add a method for users to read raw or processed accelerometer/gyroscope data from the FIFO.
